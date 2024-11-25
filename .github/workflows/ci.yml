@@ -16,14 +16,11 @@ jobs:
     outputs:
       cache-hit: ${{ steps.cache-deps.outputs.cache-hit }}
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Common Setup
+        uses: ./.github/workflows/common.yml
         with:
           node-version: '22'
           cache: 'yarn'
-      - name: Install Dependencies
-        id: yarn-install
-        run: yarn install
 
   lint:
     name: Run Linter

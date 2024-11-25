@@ -1,0 +1,24 @@
+name: "Common Setup"
+description: "Setup Node.js and install dependencies"
+inputs:
+  node-version:
+    description: "Node.js version"
+    required: true
+  cache:
+    description: "Cache strategy for dependencies"
+    required: false
+    default: "yarn"
+outputs:
+  cache-hit:
+    description: "Cache hit for dependencies"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: "${{ inputs.node-version }}"
+        cache: "${{ inputs.cache }}"
+    - name: Install Dependencies
+      id: yarn-install
+      run: yarn install

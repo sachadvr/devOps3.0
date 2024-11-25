@@ -12,15 +12,10 @@ on:
 jobs:
   common-setup:
     name: Common Pipeline Setup
-    runs-on: ubuntu-latest
-    outputs:
-      cache-hit: ${{ steps.cache-deps.outputs.cache-hit }}
-    steps:
-      - name: Common Setup
-        uses: ./.github/workflows/common.yml
-        with:
-          node-version: '22'
-          cache: 'yarn'
+    uses: ./.github/workflows/common.yml
+    with:
+      node-version: '22'
+      cache: 'yarn'
 
   lint:
     name: Run Linter
@@ -60,10 +55,3 @@ jobs:
     needs: build
     steps:
       - name: Login to Docker Hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-
-      - name: Build Docker Image
-        run: docker build -t sachadvr/remix-app .
-
-      - name: Push Docker Image
-        run: docker push sachadvr/remix-app

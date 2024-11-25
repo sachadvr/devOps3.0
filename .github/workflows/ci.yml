@@ -98,9 +98,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Install MkDocs
-        run: apt-get update && apt-get install -y python3-pip && pip3 install mkdocs mkdocs-material
-
+      - name: Prepare MkDocs
+        run: |
+          pip install mkdocs
+          pip install mkdocs-material
       - name: Run MkDocs
         run: mkdocs build
 

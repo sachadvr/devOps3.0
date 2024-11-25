@@ -6,6 +6,7 @@ export class PokeApiClient {
   async getPokemonList(limit: number = 151): Promise<Pokemon[]> {
     const response = await fetch(`${this.baseUrl}/pokemon?limit=${limit}`);
     const data = await response.json();
+    console.log(data);
 
     return Promise.all(
       data.results.map(async (pokemon: { url: string }) => {

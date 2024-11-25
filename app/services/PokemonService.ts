@@ -21,6 +21,10 @@ export class PokemonService {
     this.userTeams.delete(userId);
   }
 
+  clearTeams() {
+    this.userTeams.clear();
+  }
+
   togglePokemonInTeam(userId: string, pokemon: Pokemon): boolean {
     let team = this.userTeams.get(userId) || [];
 

@@ -51,6 +51,8 @@ Hey! I'm a software developer. I just built the most amazing app but now, I am l
 I need to make sure that future changes won't break the app.
 I am pretty sure that this is the next Facebook or something so make sure that nothing can break it!
 
+This is the link to my GitHub Repository! Feel free to use it as a template.
+
 ## What I need
 First, I herd about unit testing, I always thought it was a waste of time but now 
 I am waiting millions of users so I want to be sure that everything is perfect or you know, I don't want my mom to find a bug that I missed.
@@ -73,8 +75,8 @@ Be sure to make it secure, I don't want a security flaw to destroy my future dat
 You only have to push docker images when a commit is pushed on the main branch.
 
 
-> Do not commit Your Docker Hub API Key, ever, ever, ever! Find another way ;)
+> Do not commit Your Docker Hub API Key, ever, ever, ever! Find another way ;) (If you do, I'll know it)
 
 ## Submit your work
 
-The submitting zone will be available as soon as possible!! 
+The submitting zone will be available as soon as possible (max: 2024-11-26)

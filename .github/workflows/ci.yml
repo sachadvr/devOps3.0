@@ -98,13 +98,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run Common Setup
-        uses: ./.github/actions/common
-        with:
-          node-version: '22'
-          cache: 'yarn'
+      - name: Install MkDocs
+        run: apt-get update && apt-get install -y python3-pip && pip3 install mkdocs mkdocs-material
 
-      - name: MkDocs Build Documentation
+      - name: Run MkDocs
         run: mkdocs build
 
       - name: Setup Pages for GitHub Pages

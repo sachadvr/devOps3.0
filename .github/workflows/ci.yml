@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
   lint:
@@ -29,12 +29,12 @@ jobs:
     needs: common-setup
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
       - name: Run Linter
@@ -46,12 +46,12 @@ jobs:
     needs: common-setup
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
       - name: Run Tests
@@ -63,12 +63,12 @@ jobs:
     needs: common-setup
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
       - name: Build Project
@@ -80,12 +80,12 @@ jobs:
     needs: common-setup
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
       - name: Check Formatting
@@ -97,12 +97,12 @@ jobs:
     needs: build
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: ./.github/actions/checkout
 
       - name: Run Common Setup
         uses: ./.github/actions/common
         with:
-          node-version: '16'
+          node-version: '22'
           cache: 'yarn'
 
       - name: Login to Docker Hub

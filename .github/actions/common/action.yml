@@ -4,6 +4,7 @@ inputs:
   node-version:
     description: "Node.js version"
     required: true
+    default: "22"
   cache:
     description: "Cache strategy for dependencies"
     required: false
@@ -17,8 +18,9 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: "${{ inputs.node-version }}"
-        cache: "${{ inputs.cache }}"
+        node-version: ${{ inputs.node-version }}
+        cache: ${{ inputs.cache }}
+
     - name: Install Dependencies
       id: yarn-install
       run: yarn install

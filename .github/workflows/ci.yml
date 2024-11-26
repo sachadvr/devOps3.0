@@ -93,6 +93,9 @@ jobs:
   docs:
     name: Build Documentation
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs: common-setup
     steps:
       - name: Checkout Repository

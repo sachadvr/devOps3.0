@@ -96,6 +96,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pages: write
     needs: common-setup
     steps:
       - name: Checkout Repository

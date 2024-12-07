@@ -1,3 +1,5 @@
+[![CI/CD Pipeline](https://github.com/sachadvr/java-cicd/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/sachadvr/java-cicd/actions/workflows/ci-cd.yml)
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)
